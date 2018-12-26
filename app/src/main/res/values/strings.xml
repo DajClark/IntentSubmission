@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">IntentSubmission</string>
+    <string name="next">Next</string>
+    <string name="detail">Detail</string>
+    <string name="prev">Prev</string>
+    <string name="game_list">List of Games:</string>
+    <string name="game_list_platform">Platform</string>
+    <string name="game_list_description">Game Description</string>
+    <string name="game_complete">Game Complete?</string>
+
+    <string-array name="game">
+        <item>Super Smash Brothers</item>
+        <item>Red Dead Redemption 2</item>
+        <item>Skyrim</item>
+        <item>Stardew Valley</item>
+        <item>Legend of Zelda: BotW</item>
+    </string-array>
+    <string-array name="game_platform">
+        <item>Switch</item>
+        <item>PS4</item>
+        <item>PS3</item>
+        <item>PC</item>
+        <item>Switch</item>
+    </string-array>
+    <string-array name="game_description">
+        <item>Fighting game for up to 8 players in which fighters from Nintendo and other franchises try to knock each other from an arena.</item>
+        <item>Action adventure set in a western-theme. The player controls Arthur Morgan, an outlaw trying to fight for the freedom of his people.</item>
+        <item>Action role-playing game. The player controls the dragonborn as he attempts to defeat the dragon Alduin the World-Eater.</item>
+        <item>An open ended country life farming simulation game. The player must try to restore Stardew Valley to its former glory.</item>
+        <item>Action adventure in which the player controls Link, who awakens from a 100 year sleep to find the kingdom of hyrule is going to be destroyed by the evil Calamity Ganon.</item>
+    </string-array>
 </resources>
