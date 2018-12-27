@@ -24,6 +24,8 @@ public class GameActivity extends AppCompatActivity {
     // Key value name for value passed back in intent upon result.
     private static final String IS_GAME_COMPLETE = "com.example.isGameComplete";
 
+    // Name of key value to be stored on lifecycle change.
+    private static final String GAME_INDEX = "com.example.gameIndex";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +34,15 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Log message to show lifecycle state.
-        Log.d(TAG, " *** the PC is in onCreate ***");
+        Log.d(TAG, " ****** Lifecycle at onCreate ******");
 
         // Sets activity view using XML layout file.
         setContentView(R.layout.activity_game);
+
+        // Checks to see saved instance from state change exists and declares saved index value.
+        if (savedInstanceState != null){
+            mGameIndex = savedInstanceState.getInt(GAME_INDEX, 0);
+        }
 
         // Initialises and sets the main text view to the appropriate array value.
         final TextView gameTextView = findViewById(R.id.textViewGame);
@@ -78,6 +85,12 @@ public class GameActivity extends AppCompatActivity {
         });
     }
 
+    // Overridden to store index value using bundle of lifecycle state change.
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt(GAME_INDEX, mGameIndex);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -112,7 +125,7 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
-    // Method to set the appropriate game completion status.
+    // Method to set the appropriate game completion status message.
     private void setTextViewComplete(String message) {
 
         // Gets and sets the completion TextView text using the TextView ID.
